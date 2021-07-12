@@ -41,7 +41,7 @@ client.on("message", async message =>{
 		msg.edit(`${response} - Bot ping: \`${latency}ms\``);
     }
 
-    if(command = `${prefix}help`){
+    if(command == `${prefix}help`){
 
         var helpembed = new discord.MessageEmbed()
             .setTitle(`Alle commands van de bot`)
