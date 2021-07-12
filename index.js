@@ -78,8 +78,6 @@ client.on("message", async message =>{
 
         if(!warnUser) return message.reply("Geen gebruiker gevonden");
 
-        if(warnUser.hasPermission("MOVE_MEMBERS")) return message.reply("Je kunt geen staff warnen");
-
         if(!warns[warnUser.id]) warns[warnUser.id] = {
             warns: 0
         };
