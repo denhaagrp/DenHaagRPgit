@@ -41,8 +41,12 @@ client.on("message", async message =>{
 		msg.edit(`${response} - Bot ping: \`${latency}ms\``);
     }
 
-    if(command == `${prefix}sad`){
-        message.channel.send(`waarom ben je sad??😢`);
+    if(command == `${prefix}help`){
+
+        var helpembed = new discord.MessageEmbed()
+            .setTitle(`Alle commands van de bot`)
+            .setDescription(`fun commands😂
+            '!sts' Om steen papier schaar te spelen`)
     }
 
 });
