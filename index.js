@@ -85,7 +85,7 @@ client.on("message", async message =>{
         warns[warnUser.id].warns++; 
 
         fs.writeFile("./warnings.json", JSON.stringify(warns), (err) =>{
-            if(err) console.log(err)
+            if(err) console.log(err) 
         });
 
         var warnembed = new discord.MessageEmbed()
