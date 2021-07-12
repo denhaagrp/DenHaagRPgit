@@ -23,11 +23,8 @@ client.on("message", async message =>{
 
     var command = messageArray[0];
 
-    if(command == `${prefix}hallo`){
-        return message.channel.send("Hoi!")
+    if(command == `${prefix}test`){
+        return message.channel.send("✔")
     }
 
-    if(command == `${prefix}boe`){
-        return message.channel.send("schrik")
-    }
 });
