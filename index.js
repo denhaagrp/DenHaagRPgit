@@ -41,7 +41,7 @@ client.on("message", async message =>{
 		msg.edit(`${response} - Bot ping: \`${latency}ms\``);
     }
 
-    if(command == `${prefix}help`){
+    if(command = `${prefix}help`){
 
         var helpembed = new discord.MessageEmbed()
             .setTitle(`Alle commands van de bot`)
@@ -49,16 +49,19 @@ client.on("message", async message =>{
             .setFooter(`requested door ${message.user}`)
             .setTimestamp()
             .setDescription(`**fun commands**😂
-            '!sts' Om steen papier schaar te spelen
+            !sts | Om steen papier schaar te spelen
             
             **hulp commands**📃
-            '!solliciteer' om informatie te vinden over het soliciteren
+            !solliciteer | om informatie te vinden over het soliciteren
             
             **Moderation commands**🔒
-            '!warn' om een speler te warnen`)
+            !warn | om een speler te warnen`)
         message.channel.send(helpembed)
 
 
+    }
+
+    if(command == `${prefix}warn`){
     }
 
 });
