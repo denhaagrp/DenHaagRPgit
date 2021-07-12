@@ -72,7 +72,7 @@ client.on("message", async message =>{
 
         if (!args[2]) return message.reply("Geef een reden op");
 
-        var warnUser = message.guild.member(message.mentions.user.first() || message.guild.members.get(args[1]));
+        const warnUser = message.mentions.users.first();
 
         var warnreden = args.slice(2).join(" ");
 
