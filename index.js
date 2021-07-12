@@ -45,8 +45,20 @@ client.on("message", async message =>{
 
         var helpembed = new discord.MessageEmbed()
             .setTitle(`Alle commands van de bot`)
-            .setDescription(`fun commands😂
-            '!sts' Om steen papier schaar te spelen`)
+            .setColor(BLUE)
+            .setFooter(`requested door ${message.user.tag}`)
+            .setTimestamp()
+            .setDescription(`**fun commands**😂
+            '!sts' Om steen papier schaar te spelen
+            
+            **hulp commands**📃
+            '!solliciteer' om informatie te vinden over het soliciteren
+            
+            **Moderation commands**🔒
+            '!warn' om een speler te warnen`)
+        message.channel.send(helpembed)
+
+
     }
 
 });
