@@ -1,5 +1,7 @@
 const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
+const fs = require("fs");
+const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 const client = new discord.Client();
 client.login(process.env.token);
@@ -62,6 +64,46 @@ client.on("message", async message =>{
     }
 
     if(command == `${prefix}warn`){
+        const args = message.content.slice(prefix.length).split(/ +/);
+
+        if (!message.member.hasPermission("MOVE_MEMBERS")) return message.reply("Jij hebt geen permissie voor deze command");
+        
+        if (!args[1]) return message.reply("Geen gebruiker gevonden");
+
+        if (!args[2]) return message.reply("Geef een reden op");
+
+        var warnUser = message.guild.member(message.mentions.user.first() || message.guild.members.get(args[1]));
+
+        var warnreden = args.slice(2).join(" ");
+
+        if(!warnUser) return message.reply("Geen gebruiker gevonden");
+
+        if(warnUser.hasPermission("MOVE_MEMBERS")) return message.reply("Je kunt geen staff warnen");
+
+        if(!warns[warnUser.id]) warns[warnUser.id] = {
+            warns: 0
+        };
+
+        warns[warnUser.id].warns++; 
+
+        fs.writeFile("./warnings.json", JSON.stringify(warns), (err) =>{
+            if(err) console.log(err)
+        });
+
+        var warnembed = new discord.MessageEmbed()
+        .setColor("#a71919")
+        .setFooter("Bericht door de bot")
+        .setTimestamp()
+        .setDescription(`**Gewarnd:** ${warnUser} (${warnUser.id})
+        **Warning door:** ${message.author}
+        **Reden:** ${warnreden}`)
+        .addField("Aantal warns", warns[warnUser.id].warns);
+
+    var kanaal = message.member.guild.channels.cache.get("863822802292572201");
+
+    if(!kanaal) return message.reply("Geen logs kanaal gevonden!");
+
+    kanaal.send(warnembed)
     }
 
 });
