@@ -1,0 +1,23 @@
+{
+  "name": "denhaagrpbot",
+  "version": "1.0.0",
+  "description": "DenhaagRP bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "!test",
+    "start": "nodemon"
+  },
+  "keywords": [
+    "DenHaagRP",
+    "fivem",
+    "bot"
+  ],
+  "author": "Jens",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
