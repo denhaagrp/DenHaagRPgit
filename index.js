@@ -41,4 +41,8 @@ client.on("message", async message =>{
 		msg.edit(`${response} - Bot ping: \`${latency}ms\``);
     }
 
+    if(command == `${prefix}sad`){
+        message.channel.send(`waarom ben je sad??😢`);
+    }
+
 });
