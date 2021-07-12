@@ -45,7 +45,7 @@ client.on("message", async message =>{
 
         var helpembed = new discord.MessageEmbed()
             .setTitle(`Alle commands van de bot`)
-            .setColor(BLUE)
+            .setColor("#81d8d0")
             .setFooter(`requested door ${message.user.tag}`)
             .setTimestamp()
             .setDescription(`**fun commands**😂
