@@ -27,6 +27,10 @@ client.on("message", async message =>{
         return message.channel.send("Check")
     }
 
+    if(command == `${prefix}uptime`){
+        message.channel.send(`Uptime is \`${ms(this.client.uptime, { long: true })}\``);
+    }
+
     if(command == `${prefix}ping`){
         const msg = await message.channel.send('Pinging...');
 
@@ -34,7 +38,7 @@ client.on("message", async message =>{
 		const choices = ['Is this really my ping?', 'Is this okay? I can\'t look!', 'I hope it isn\'t bad!'];
 		const response = choices[Math.floor(Math.random() * choices.length)];
 
-		msg.edit(`${response} - Bot Latency: \`${latency}ms\`, API Latency: \`${Math.round(this.client.ws.ping)}ms\``);
+		msg.edit(`${response} - Bot ping: \`${latency}ms\``);
     }
 
 });
