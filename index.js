@@ -46,7 +46,7 @@ client.on("message", async message =>{
         var helpembed = new discord.MessageEmbed()
             .setTitle(`Alle commands van de bot`)
             .setColor("#81d8d0")
-            .setFooter(`requested door ${message.user.tag}`)
+            .setFooter(`requested door ${message.user}`)
             .setTimestamp()
             .setDescription(`**fun commands**😂
             '!sts' Om steen papier schaar te spelen
