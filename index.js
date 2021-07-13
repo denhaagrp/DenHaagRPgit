@@ -30,7 +30,7 @@ client.on("message", async message =>{
     }
 
     if(command == `${prefix}uptime`){
-        message.channel.send(`Uptime is \`${ms(this.client.uptime, { long: true })}\``);
+        message.channel.send(`Uptime is \`${(this.client.uptime, { long: true })}\``);
     }
 
     if(command == `${prefix}ping`){
