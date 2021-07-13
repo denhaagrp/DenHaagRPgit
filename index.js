@@ -29,6 +29,24 @@ client.on("message", async message =>{
         return message.channel.send("Check")
     }
 
+    if(command == `${prefix}solliciteer`){
+        var solliembed = new discord.MessageEmbed()
+        .setTitle("Solliciteer")
+        .setColor("#81d8d0")
+        .setFooter(`Requested bij ${message.author}`)
+        .setTimestamp()
+        .setDescription(`Om te solliciteren bij een overheids baan moet je een sollicitatie maken.
+        De link waar je de vragen kan vinden staan hieronder. Succses!`)
+        .addFields(
+            {name: 'Politie', value: 'https://docs.google.com/forms/d/1dvr6cD6a7H3AmipYwtrm-VhiBwNMo71rzxGSJT3o6Q'},
+            {name: 'Ambulance', value: 'https://docs.google.com/forms/d/1YwzsDbHGsO1w4GB-Q4CpDNHvXpbeEe0POdIpx-Lyvgc'},
+            {name: 'ANWB', value: 'https://docs.google.com/forms/d/1wE_vn8_t-UU0c9MhdNQjzK_nuA__llNXi3__JX9-zks'},
+            {name: 'Taxi', value: 'https://docs.google.com/forms/d/1SnynaAHXv4qoYV0nCSk2VcU3ViJznxkv-InLMBsd8XY'}
+        )
+
+        message.channel.send(solliembed)
+    }
+
     if(command == `${prefix}uptime`){
         message.channel.send(`Uptime is \`${(this.client.uptime, { long: true })}\``);
     }
