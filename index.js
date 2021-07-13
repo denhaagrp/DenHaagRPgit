@@ -37,8 +37,7 @@ client.on("message", async message =>{
         const msg = await message.channel.send('Pinging...');
 
 		const latency = msg.createdTimestamp - message.createdTimestamp;
-		const choices = ['Is this really my ping?', 'Is this okay? I can\'t look!', 'I hope it isn\'t bad!'];
-		const response = choices[Math.floor(Math.random() * choices.length)];
+		const response = Math.floor(Math.random());
 
 		msg.edit(`${response} - Bot ping: \`${latency}ms\``);
     }
@@ -64,7 +63,8 @@ client.on("message", async message =>{
     }
 
     if(command == `${prefix}warn`){
-        const args = message.content.slice(prefix.length).split(/ +/);
+        return message.reply("🛠️ Deze command is tijdelijk in onderhoud")
+        /*const args = message.content.slice(prefix.length).split(/ +/);
 
         if (!message.member.hasPermission("MOVE_MEMBERS")) return message.reply("Jij hebt geen permissie voor deze command");
         
@@ -101,7 +101,7 @@ client.on("message", async message =>{
 
     if(!kanaal) return message.reply("Geen logs kanaal gevonden!");
 
-    kanaal.send(warnembed)
+    kanaal.send(warnembed) */
     }
 
 });
