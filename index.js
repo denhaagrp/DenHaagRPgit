@@ -38,10 +38,10 @@ client.on("message", async message =>{
         .setDescription(`Om te solliciteren bij een overheids baan moet je een sollicitatie maken.
         De link waar je de vragen kan vinden staan hieronder. Succses!`)
         .addFields(
-            {name: 'Politie', value: 'https://docs.google.com/forms/d/e/1FAIpQLSekyCw3uwW6S6mcODjLGxMdvvQ_ovYlL7RrfzeMqyqZr9mwTQ'},
-            {name: 'Ambulance', value: 'https://docs.google.com/forms/d/e/1FAIpQLSeo3_NFfttRo2eFHibkX1QY0HQHi5LOFpcvn_R3eSVNkeAqYg'},
-            {name: 'ANWB', value: 'https://docs.google.com/forms/d/e/1FAIpQLSe26TZu5Iowj2CaSm8_3iCVHw_dZtUJq6GAkD8jx5F2tmZuLA'},
-            {name: 'Taxi', value: 'https://docs.google.com/forms/d/e/1FAIpQLSe5Eqd3hqjRaYPRMkz4i_XKUT59w2uxhgZiFsFkIdYI8_AoiA'}
+            {name: 'Politie', value: 'https://docs.google.com/forms/d/e/1FAIpQLSekyCw3uwW6S6mcODjLGxMdvvQ_ovYlL7RrfzeMqyqZr9mwTQ/viewform?usp=sf_link'},
+            {name: 'Ambulance', value: 'https://docs.google.com/forms/d/e/1FAIpQLSeo3_NFfttRo2eFHibkX1QY0HQHi5LOFpcvn_R3eSVNkeAqYg/viewform?usp=sf_link'},
+            {name: 'ANWB', value: 'https://docs.google.com/forms/d/e/1FAIpQLSe26TZu5Iowj2CaSm8_3iCVHw_dZtUJq6GAkD8jx5F2tmZuLA/viewform?usp=sf_link'},
+            {name: 'Taxi', value: 'https://docs.google.com/forms/d/e/1FAIpQLSe5Eqd3hqjRaYPRMkz4i_XKUT59w2uxhgZiFsFkIdYI8_AoiA/viewform?usp=sf_link'}
         )
 
         message.channel.send(solliembed)
