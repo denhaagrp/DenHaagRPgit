@@ -63,7 +63,7 @@ client.on("message", async message =>{
     }
 
     if(command == `${prefix}warn`){
-        return message.reply("🛠️ Deze command is tijdelijk in onderhoud")
+        message.channel.send("🛠️ Deze command is tijdelijk in onderhoud")
         /*const args = message.content.slice(prefix.length).split(/ +/);
 
         if (!message.member.hasPermission("MOVE_MEMBERS")) return message.reply("Jij hebt geen permissie voor deze command");
